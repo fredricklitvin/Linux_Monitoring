@@ -10,7 +10,7 @@ Make sure to:
 
 
 
-##🚀 How to Run
+## 🚀 How to Run
 You can run the script manually or schedule it via cron:
 
 bash monitor.sh
@@ -19,7 +19,7 @@ To run it periodically (e.g., every hour), add this to your crontab:
 0 * * * * /path/to/monitor.sh
 
 
-##💡 Why I Created This
+## 💡 Why I Created This
 As part of my journey learning and practicing DevOps skills, I built this script to simulate real-world monitoring and alerting pipelines on a Linux-based server. The goal was to:
 
 Reinforce Bash scripting and systems knowledge
@@ -30,7 +30,7 @@ Integrate log capture, alert logic, and basic CI/CD patterns
 
 Create a reusable health-check tool for small projects or home labs
 
-##🔍 What It Checks
+## 🔍 What It Checks
 Check Type	What it does
 CPU usage	Detects high overall CPU load and CPU-hungry processes
 Memory usage	Checks both global and per-process memory consumption
