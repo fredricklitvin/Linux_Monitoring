@@ -12,12 +12,13 @@ Make sure to:
 
 ## 🚀 How to Run
 You can run the script manually or schedule it via cron:
-
+```bash
 bash monitor.sh
+```
 To run it periodically (e.g., every hour), add this to your crontab:
-
+```bash
 0 * * * * /path/to/monitor.sh
-
+```
 
 ## 💡 Why I Created This
 As part of my journey learning and practicing DevOps skills, I built this script to simulate real-world monitoring and alerting pipelines on a Linux-based server. The goal was to:
