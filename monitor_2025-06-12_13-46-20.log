@@ -1,0 +1,156 @@
+CPU usage:  0.58%
+
+Memory used: 1.3Gi/11Gi
+
+Disk free: 37G Usage: 18%
+
+Top proccess by cpu:
+USER       UID COMMAND             PID %MEM %CPU
+root         0 ps                18110  0.0  100
+user      1000 gnome-shell       12878  3.5  3.4
+user      1000 tracker-extract   18088  0.2  1.0
+root         0 ksoftirqd/5          50  0.0  0.9
+root         0 kworker/u28:1-i   17695  0.0  0.6
+
+Top proccess by mem:
+USER       UID COMMAND             PID %CPU %MEM
+user      1000 gnome-shell       12878  3.4  3.5
+user      1000 evolution-alarm   13132  0.0  0.8
+user      1000 mutter-x11-fram   13592  0.0  0.8
+user      1000 evolution-sourc   12990  0.0  0.7
+user      1000 xdg-desktop-por   13591  0.0  0.7
+
+Docker logs:
+Stopped Docker logs:
+app3
+    self.load_wsgi()
+  File "/usr/local/lib/python3.8/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.8/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'appk'
+[2025-06-06 06:08:31 +0000] [8] [INFO] Worker exiting (pid: 8)
+[2025-06-06 06:08:31 +0000] [1] [INFO] Shutting down: Master
+[2025-06-06 06:08:31 +0000] [1] [INFO] Reason: Worker failed to boot.
+
+Docker container 'app3' shows errors in logs.
+
+app2
+    self.load_wsgi()
+  File "/usr/local/lib/python3.8/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.8/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'appk'
+[2025-06-06 06:03:47 +0000] [8] [INFO] Worker exiting (pid: 8)
+[2025-06-06 06:03:47 +0000] [1] [INFO] Shutting down: Master
+[2025-06-06 06:03:47 +0000] [1] [INFO] Reason: Worker failed to boot.
+
+Docker container 'app2' shows errors in logs.
+
+
+DNS check:
+----------fred-web-test.org----------
+
+; <<>> DiG 9.18.30-0ubuntu0.24.04.2-Ubuntu <<>> fred-web-test.org
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 48842
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;fred-web-test.org.		IN	A
+
+;; ANSWER SECTION:
+fred-web-test.org.	604800	IN	A	{secret ip}
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Thu Jun 12 13:46:22 UTC 2025
+;; MSG SIZE  rcvd: 62
+
+
+----------google.com----------
+
+; <<>> DiG 9.18.30-0ubuntu0.24.04.2-Ubuntu <<>> google.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 63157
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;google.com.			IN	A
+
+;; ANSWER SECTION:
+google.com.		21	IN	A	142.250.75.46
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Thu Jun 12 13:46:22 UTC 2025
+;; MSG SIZE  rcvd: 55
+
+
+----------stuff----------
+DNS RECORD stuff FAILED
+
+
+Nginx check:
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+
+System services check:
+----------nginx----------
+Service nginx is running
+
+----------bind9----------
+Service bind9 is running
+
+----------docker----------
+Service docker is running
+
+ISSUES:
+High Memory usage: 11.800%
+
+Low disk space 18% used
+
+These Processes take too much CPU:
+-ps 100%
+-gnome-shell 3.4%
+-tracker-extract 1.0%
+
+These Processes take too much CPU:
+-gnome-shell 3.5%
+
+Failed DNS:
+-stuff
+
+Failed dockers:
+-app3
+-app2
+
